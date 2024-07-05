@@ -1,0 +1,33 @@
+<ng-container *ngIf="photos | async as photosArray">
+    <div class="container mx-auto px-4 max-w-screen-xl py-16">
+        <h3 class="mb-3 mt-0 text-3xl font-semibold text-primary">
+            Photos gallery
+        </h3>
+        <p class="mb-10 text-lg text-blue-gray-400 font-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore ipsam possimus quisquam recusandae praesentium? Nulla est sit corrupti laborum veniam quam, debitis, pariatur dolorem, atque id perferendis ea deserunt non?</p>
+        <div class="flex flex-wrap -mx-4">
+            <div  *for="let photo of photosArray" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-6">
+                <div class="relative px-0 flex flex-col mt-6 text-gray-700 bg-white bg-clip-border">
+                    <div
+                        class="relative h-46 -mt-6 overflow-hidden shadow-sm bg-clip-border rounded-xl bg-blue-gray-500">
+                        <img [src]="photo.url" [alt]="photo.title" class="w-full h-full object-cover rounded-md"  loading="lazy">
+                    </div>
+                    <div class="py-4">
+                        <h5
+                            class="block mt-0 mb-2 font-sans text-xl font-light text-black-900 line-clamp-2">
+                            {{ photo.title.length > 48 ? (photo.title | slice:0:48) + '...' : photo.title }}
+                        </h5>
+                    </div>
+                    <div class="py-4 pt-0">
+                        <a (click)="navigateToDetail(photo.id)" class="cursor-pointer text-black-900 font-semibold flex items-center hover:text-black-900 transition-colors duration-300">
+                            Read more
+                            <svg width="15px" xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" viewBox="0 0 20 20" fill="none" stroke="#000"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>              
+        </div>
+    </div>        
+</ng-container>
