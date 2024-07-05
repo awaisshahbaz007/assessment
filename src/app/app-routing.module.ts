@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PhotosComponent } from './components/photos/photos.component';
-import { PhotoDetailComponent } from './components/photo-detail/photo-detail.component';
+import { PhotoDetailComponent } from './components/photos/photo-detail/photo-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/photos', pathMatch: 'full' },

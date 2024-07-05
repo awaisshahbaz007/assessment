@@ -1,0 +1,41 @@
+<main class="bg-gray-50 pt-16 pb-14 bg-white">
+    <div class="flex justify-between px-4 mx-auto max-w-screen-xl">
+        <article
+            class="mx-auto w-full max-w-3xl">
+            <a (click)="navigateToMain()" class="cursor-pointer flex text-lg items-center text-gray-700 font-semibold hover:text-gray-900">
+                <svg class="w-5 h-5 mr-1 transform rotate-0" fill="none" stroke="#333" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back
+            </a>     
+            <h1 class="mb-2 mt-5 text-3xl font-semibold capitalize text-gray-900 lg:mb-3 leading-normal">
+            {{selectedphotoDetail.title}}</h1>
+            <p class="text-gray-600 mt-0 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit saepe non voluptatum quisquam reiciendis, et, voluptas voluptate sapiente vitae necessitatibus ducimus ex vel iste tenetur quia eligendi facilis doloremque assumenda.</p>
+            <figure class="py-8">
+                <img [src]="selectedphotoDetail.url" [alt]="selectedphotoDetail.title" class="rounded-md w-full h-96 object-cover" loading="lazy">         
+            </figure>
+            <p class="text-gray-600 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit saepe non voluptatum quisquam reiciendis, et, voluptas voluptate sapiente vitae necessitatibus ducimus ex vel iste tenetur quia eligendi facilis doloremque assumenda.</p>
+            <p class="text-gray-600 text-lg mt-3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+            <p class="text-gray-600 text-lg mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit saepe non voluptatum quisquam reiciendis, et, voluptas voluptate sapiente vitae necessitatibus ducimus ex vel iste tenetur quia eligendi facilis doloremque assumenda.</p>
+            <ol class="mt-6">
+                <li class="mt-3"><strong>Usability testing</strong>. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                </li>
+                <li class="mt-3"><strong>Involving stakeholders</strong> All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures</li>
+                <li class="mt-3"><strong>Impressing a client</strong>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</li>
+                <li class="mt-3"><strong>Communicating your vision</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit saepe non voluptatum quisquam reiciendis, et, voluptas voluptate sapiente vitae necessitatibus ducimus ex vel iste tenetur quia eligendi facilis doloremque assumenda
+                </li>
+            </ol>
+           
+        </article>
+    </div>
+</main>
+
+<footer class="border-t border-gray-200">
+    <div class="p-4 py-6 md:p-8 lg:p-10">
+        <div class="text-center">
+            <span class="block text-sm text-center text-gray-900">© 2023-2024 <a href="#"
+                    class="hover:underline">Assessment</a>. All Rights Reserved.
+            </span>
+        </div>
+    </div>
+</footer>

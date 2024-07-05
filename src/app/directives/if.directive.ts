@@ -1,34 +1,24 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 
 @Directive({
-  selector: '[if]'
+  selector: '[if]',
+  standalone: true
 })
-export class IfDirective<T> {
+export class IfDirective {
+  private hasView = false;
+
   constructor(
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef
   ) {}
 
-  @Input() set if(condition: Observable<T> | null) {
-    if (condition) {
-      condition.pipe(takeUntil(this.destroy$)).subscribe((value) => {
-        if (value) {
-          this.viewContainer.createEmbeddedView(this.templateRef, { $implicit: value });
-        } else {
-          this.viewContainer.clear();
-        }
-      });
-    } else {
+  @Input() set if(condition: boolean) {
+    if (condition && !this.hasView) {
+      this.viewContainer.createEmbeddedView(this.templateRef);
+      this.hasView = true;
+    } else if (!condition && this.hasView) {
       this.viewContainer.clear();
+      this.hasView = false;
     }
-  }
-
-  private destroy$ = new Subject<void>();
-
-  ngOnDestroy() {
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 }

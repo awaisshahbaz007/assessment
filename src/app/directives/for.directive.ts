@@ -7,6 +7,7 @@ export interface ForContext<T> {
 
 @Directive({
   selector: '[for][forOf]',
+  standalone: true,
 })
 export class ForDirective<T> {
   private items!: T[];

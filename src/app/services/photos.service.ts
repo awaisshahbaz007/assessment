@@ -8,6 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class PhotoService {
   private apiUrl = 'https://jsonplaceholder.typicode.com/albums/1/photos';
+  private selectedPhotoDetail: any;
 
   constructor(private http: HttpClient) {}
 
@@ -28,4 +29,12 @@ export class PhotoService {
     }
     return throwError('Something wrong, please try again later.');
   }
+  
+  setSelectedPhotoDetail(item: any) {
+    this.selectedPhotoDetail = item;
+  }
+  getSelectedPhotoDetail() {
+    return this.selectedPhotoDetail;
+  }
+
 }

@@ -4,18 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ForDirective } from './directives/for.directive';
-import { PhotosComponent } from './components/photos/photos.component';
-import { PhotoDetailComponent } from './components/photo-detail/photo-detail.component';
-import { IfDirective } from './directives/if.directive';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent, 
-    ForDirective,
-    IfDirective,
-    PhotosComponent,
-    PhotoDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +17,7 @@ import { IfDirective } from './directives/if.directive';
     HttpClientModule
   ],
   providers: [
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })
